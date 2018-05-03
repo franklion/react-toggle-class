@@ -53,12 +53,28 @@ class List extends React.Component {
 
   toggleClass(index) {
 
+    // good
     const persons = this.state.persons.slice();
     persons[index].isActive = !persons[index].isActive
 
     this.setState({
       persons: persons
     })
+
+    // bad
+    // 在setState()之前，將會改變原先數值
+    // const persons = this.state.persons;
+    // persons[index].isActive = !persons[index].isActive
+    // console.log( this.state.persons )
+
+    // this.setState({
+    //   persons: persons
+    // })
+
+    // bad
+    // 直接修改數值 ，會有警告說請不要這麼做
+    // this.state.persons[0].name = 'snow man'
+    // console.log( this.state.persons )
   }
 
   showFontRed(index) {
