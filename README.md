@@ -13,7 +13,7 @@
 ## File output path
 
   - build/
-    
+
 ## Contributors
 
   - Frank
